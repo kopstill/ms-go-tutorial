@@ -6,6 +6,8 @@ import (
 	"github.com/kopever/calculator"
 
 	calc "kopstill/calculator"
+
+	"rsc.io/quote"
 )
 
 func main() {
@@ -16,4 +18,6 @@ func main() {
 
 	fmt.Println(calc.Sum(1, 5))
 	fmt.Println(calc.Version)
+
+	fmt.Println(quote.Hello())
 }
