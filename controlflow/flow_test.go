@@ -57,3 +57,7 @@ func TestDefer(t *testing.T) {
 func TestDefer1(t *testing.T) {
 	deferDemo1()
 }
+
+func TestPanic(t *testing.T) {
+	panicDemo()
+}
