@@ -61,3 +61,7 @@ func TestDefer1(t *testing.T) {
 func TestPanic(t *testing.T) {
 	panicDemo()
 }
+
+func TestRecover(t *testing.T) {
+	recoverDemo()
+}
