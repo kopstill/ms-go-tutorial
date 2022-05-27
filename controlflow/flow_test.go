@@ -33,3 +33,19 @@ func TestFooTime(t *testing.T) {
 func TestCompare(t *testing.T) {
 	compare()
 }
+
+func TestFor(t *testing.T) {
+	forDemo()
+}
+
+func TestFor1(t *testing.T) {
+	forDemo1()
+}
+
+func TestFor2(t *testing.T) {
+	forDemo2()
+}
+
+func TestFor3(t *testing.T) {
+	forDemo3()
+}
