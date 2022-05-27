@@ -49,3 +49,11 @@ func TestFor2(t *testing.T) {
 func TestFor3(t *testing.T) {
 	forDemo3()
 }
+
+func TestDefer(t *testing.T) {
+	deferDemo()
+}
+
+func TestDefer1(t *testing.T) {
+	deferDemo1()
+}
