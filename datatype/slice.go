@@ -1,8 +1,8 @@
-package main
+package datatype
 
 import "fmt"
 
-func main() {
+func slice() {
 	months := []string{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
 	fmt.Println(months)
 	fmt.Println("Length:", len(months))

@@ -1,8 +1,8 @@
-package main
+package datatype
 
 import "fmt"
 
-func main() {
+func array() {
 	var a [3]int
 	a[1] = 10
 	fmt.Println(a[0])
