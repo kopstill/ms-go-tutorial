@@ -45,7 +45,8 @@ func slice() {
 
 	slice11 := letters[0:2]
 	// slice22 := letters[1:4]
-	slice22 := make([]string, 3, 3)
+	// slice22 := make([]string, 3, 3)
+	slice22 := make([]string, 3, 4)
 	copy(slice22, letters[1:4])
 
 	slice11[1] = "Z"
