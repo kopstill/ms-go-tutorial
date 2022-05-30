@@ -13,3 +13,7 @@ func TestSlice(t *testing.T) {
 func TestMap(t *testing.T) {
 	mapdemo()
 }
+
+func TestEmployee(t *testing.T) {
+	employee()
+}
