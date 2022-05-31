@@ -17,3 +17,7 @@ func TestMap(t *testing.T) {
 func TestEmployee(t *testing.T) {
 	employee()
 }
+
+func TestEmployee1(t *testing.T) {
+	employee1()
+}

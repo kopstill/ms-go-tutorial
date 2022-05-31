@@ -20,7 +20,11 @@ func employee() {
 
 	employee = Employee{LastName: "Doe", FirstName: "John"}
 	fmt.Println(employee)
+	employee.ID = 1002
+	fmt.Println(employee)
 
-	employee = Employee{LastName: "Doexxx", FirstName: "Johnxxx"}
-
+	employeeCopy := &employee
+	employee.FirstName = "David"
+	fmt.Println(employeeCopy)
+	fmt.Println(employee)
 }
