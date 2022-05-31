@@ -1,12 +1,16 @@
 package datatype
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type Person struct {
 	ID        int
-	FirstName string
+	FirstName string `json:"first_name"`
 	LastName  string
-	Address   string
+	Address   string `json:"address,omitempty"`
+	Remark    string `json:"-"`
 }
 
 type Employee1 struct {
@@ -30,7 +34,8 @@ func employee1() {
 
 	employee1 := Employee1{
 		Person: Person{
-			ID: 1001,
+			ID:     1001,
+			Remark: "memo",
 		},
 		ManagerID: 1002,
 	}
@@ -63,4 +68,39 @@ func employee1() {
 	contractor.Person.FirstName = "Tom"
 	contractor.Person.LastName = "Hanks"
 	fmt.Println(contractor)
+
+	fmt.Println("---------------------------------")
+
+	data, _ := json.Marshal(employee1)
+	fmt.Println(data)
+	fmt.Println(string(data))
+	fmt.Printf("%s\n", data)
+
+	var decoded Employee1
+	json.Unmarshal(data, &decoded)
+	fmt.Printf("%v\n", decoded)
+
+	fmt.Println("---------------------------------")
+
+	employees := []Employee1{
+		Employee1{
+			Person: Person{
+				LastName: "Doe", FirstName: "John",
+			},
+			ManagerID: 1001,
+		},
+		Employee1{
+			Person: Person{
+				LastName: "Campbell", FirstName: "David",
+			},
+			ManagerID: 1002,
+		},
+	}
+
+	data1, _ := json.Marshal(employees)
+	fmt.Printf("%s\n", data1)
+
+	var decoded1 []Employee1
+	json.Unmarshal(data1, &decoded1)
+	fmt.Printf("%v\n", decoded1)
 }
