@@ -12,3 +12,9 @@ func TestFibonacci(t *testing.T) {
 	}
 	fmt.Println(result)
 }
+
+func TestRomanNumerals(t *testing.T) {
+	fmt.Println("MCLX is:", romanToArabic("MCLX"))
+	fmt.Println("MCMXCIX is:", romanToArabic("MCMXCIX"))
+	fmt.Println("MCMZ is:", romanToArabic("MCMZ"))
+}
