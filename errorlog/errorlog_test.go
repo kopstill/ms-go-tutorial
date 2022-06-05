@@ -18,3 +18,15 @@ func TestEmployee(t *testing.T) {
 		fmt.Println(employee)
 	}
 }
+
+func TestSimpleLog(t *testing.T) {
+	simpleLog()
+}
+
+func TestPanicLog(t *testing.T) {
+	panicLog()
+}
+
+func TestPrefixLog(t *testing.T) {
+	prefixLog()
+}
