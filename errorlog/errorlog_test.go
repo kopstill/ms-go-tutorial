@@ -30,3 +30,7 @@ func TestPanicLog(t *testing.T) {
 func TestPrefixLog(t *testing.T) {
 	prefixLog()
 }
+
+func TestFileLog(t *testing.T) {
+	fileLog()
+}
