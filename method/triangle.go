@@ -6,6 +6,7 @@ type coloredTriangle struct {
 	color string
 }
 
-// func (ct coloredTriangle) perimeter() int {
-// 	return ct.triangle.size * 10
-// }
+func (ct coloredTriangle) perimeter() int {
+	// return ct.triangle.perimeter() * 2
+	return ct.size * 3 * 2
+}
