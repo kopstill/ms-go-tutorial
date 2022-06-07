@@ -15,3 +15,11 @@ func (t triangle) perimeter() int {
 func (s square) perimeter() int {
 	return s.size * 4
 }
+
+func (t *triangle) triangleDoubleSize() {
+	t.size *= 2
+}
+
+func (s *square) squareDoubleSize() {
+	s.size *= 2
+}
