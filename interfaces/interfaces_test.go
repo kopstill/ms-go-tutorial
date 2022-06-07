@@ -38,3 +38,7 @@ func TestStringer(t *testing.T) {
 	// fmt.Println(rs)
 	// fmt.Println(ab)
 }
+
+func TestGithubApi(t *testing.T) {
+	getGithubRepos()
+}
