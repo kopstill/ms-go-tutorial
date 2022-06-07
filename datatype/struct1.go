@@ -103,4 +103,7 @@ func employee1() {
 	var decoded1 []Employee1
 	json.Unmarshal(data1, &decoded1)
 	fmt.Printf("%v\n", decoded1)
+
+	employeexxx := Employee{1001, "John", "Doe", "Doe's Street"} // won't warning in the same package without specifying the keys
+	fmt.Println(employeexxx)
 }
