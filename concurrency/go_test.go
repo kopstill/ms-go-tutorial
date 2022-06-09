@@ -7,3 +7,13 @@ func TestFoo(t *testing.T) {
 	foo()
 	// }
 }
+
+func TestBoo(t *testing.T) {
+	// for i := 0; i < 100; i++ {
+	boo()
+	// }
+}
+
+func TestChannel(t *testing.T) {
+	channel()
+}

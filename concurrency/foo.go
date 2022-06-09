@@ -51,14 +51,15 @@ func foo() {
 		Api{Microsoft, "https://graph.microsoft.com"},
 	}
 
-	ch := make(chan ApiResult)
+	ch := make(chan ApiResult, 3)
 	for _, api := range apis {
 		go checkAPI(api.apitype, api.apiurl, ch)
 	}
 
 	for i := 0; i < len(apis); i++ {
 		// fmt.Printf("%T\n", <-ch)
-		fmt.Println(<-ch)
+		chval := <-ch
+		fmt.Println(chval)
 	}
 
 	// fmt.Println(<-ch)
@@ -69,7 +70,8 @@ func foo() {
 	fmt.Printf("Done! It took %v seconds!\n", elapsed.Seconds())
 }
 
-func checkAPI(apitype ApiType, apiurl string, ch chan ApiResult) {
+// func checkAPI(apitype ApiType, apiurl string, ch chan ApiResult) {
+func checkAPI(apitype ApiType, apiurl string, ch chan<- ApiResult) {
 	_, err := http.Get(apiurl)
 	if err != nil {
 		ch <- ApiResult{apitype, fmt.Sprintf("ERROR: %s is down!", apiurl)}
