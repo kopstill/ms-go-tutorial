@@ -1,15 +1,15 @@
 package test
 
 type Account struct {
-	firstName string
-	lastName  string
+	FirstName string
+	LastName  string
 }
 
 func (account *Account) ChangeName(firstName, lastName string) {
-	account.firstName = firstName
-	account.lastName = lastName
+	account.FirstName = firstName
+	account.LastName = lastName
 }
 
 func (account Account) String() string {
-	return account.firstName + " - " + account.lastName
+	return account.FirstName + " - " + account.LastName
 }
