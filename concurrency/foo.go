@@ -25,7 +25,12 @@ func foo() {
 	for _, api := range apis {
 		go checkAPI(api, ch)
 	}
-	fmt.Println(<-ch)
+
+	for i := 0; i < len(apis); i++ {
+		fmt.Println(<-ch)
+	}
+
+	// fmt.Println(<-ch)
 
 	// time.Sleep(time.Second * 20)
 
@@ -36,9 +41,9 @@ func foo() {
 func checkAPI(api string, ch chan string) {
 	_, err := http.Get(api)
 	if err != nil {
-		ch <- fmt.Sprintf("ERROR: %s is down!\n", api)
+		ch <- fmt.Sprintf("ERROR: %s is down!", api)
 		return
 	}
 
-	ch <- fmt.Sprintf("SUCCESS: %s is up and running!\n", api)
+	ch <- fmt.Sprintf("SUCCESS: %s is up and running!", api)
 }
