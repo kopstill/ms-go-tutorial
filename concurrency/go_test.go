@@ -17,3 +17,7 @@ func TestBoo(t *testing.T) {
 func TestChannel(t *testing.T) {
 	channel()
 }
+
+func TestMultiPlexing(t *testing.T) {
+	multiplexing()
+}
