@@ -3,5 +3,7 @@ package concurrency
 import "testing"
 
 func TestFoo(t *testing.T) {
-	foo()
+	for i := 0; i < 10; i++ {
+		foo()
+	}
 }

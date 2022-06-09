@@ -21,9 +21,11 @@ func foo() {
 		"https://graph.microsoft.com",
 	}
 
+	ch := make(chan string)
 	for _, api := range apis {
-		go checkAPI(api)
+		go checkAPI(api, ch)
 	}
+	fmt.Println(<-ch)
 
 	// time.Sleep(time.Second * 20)
 
@@ -31,12 +33,12 @@ func foo() {
 	fmt.Printf("Done! It took %v seconds!\n", elapsed.Seconds())
 }
 
-func checkAPI(api string) {
+func checkAPI(api string, ch chan string) {
 	_, err := http.Get(api)
 	if err != nil {
-		defer fmt.Printf("ERROR: %s is down!\n", api)
+		ch <- fmt.Sprintf("ERROR: %s is down!\n", api)
 		return
 	}
 
-	defer fmt.Printf("SUCCESS: %s is up and running!\n", api)
+	ch <- fmt.Sprintf("SUCCESS: %s is up and running!\n", api)
 }
