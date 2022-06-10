@@ -6,8 +6,14 @@ import (
 )
 
 func multiplexing() {
+	// ch1 := make(chan string, 1)
+	// ch2 := make(chan string, 1)
+
 	ch1 := make(chan string)
 	ch2 := make(chan string)
+
+	// processing(ch1)
+	// replicating(ch2)
 
 	go processing(ch1)
 	go replicating(ch2)

@@ -13,6 +13,10 @@ func TestFibonacci(t *testing.T) {
 	fmt.Println(result)
 }
 
+func TestFibonacci1(t *testing.T) {
+	fibonacci1()
+}
+
 func TestRomanNumerals(t *testing.T) {
 	fmt.Println("MCLX is:", romanToArabic("MCLX"))
 	fmt.Println("MCMXCIX is:", romanToArabic("MCMXCIX"))

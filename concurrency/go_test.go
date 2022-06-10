@@ -21,3 +21,7 @@ func TestChannel(t *testing.T) {
 func TestMultiPlexing(t *testing.T) {
 	multiplexing()
 }
+
+func TestFibonacci(t *testing.T) {
+	fibonacci()
+}
